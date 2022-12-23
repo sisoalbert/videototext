@@ -1,6 +1,6 @@
 import "./styles.css";
 import data from "./data.json";
-console.log("videoText", data.videoText);
+// console.log("videoText", data.videoText);
 const textFile = `${data.videoText}`;
 
 function splitIntoParagraphs(textFile) {
@@ -19,7 +19,7 @@ function splitIntoParagraphs(textFile) {
     currentParagraph.push(word);
 
     // If the current paragraph has more than 100 words, push it to the paragraphs array and start a new paragraph
-    if (currentParagraph.length > 100) {
+    if (currentParagraph.length > 500) {
       paragraphs.push(currentParagraph);
       currentParagraph = [];
     }
@@ -60,9 +60,6 @@ function displayParagraphs(paragraphs) {
   }
 }
 const paragraphs = splitIntoParagraphs(textFile);
-
-const display = displayParagraphs(paragraphs);
+console.log("paragraphs", paragraphs.length);
 
 displayParagraphs(paragraphs);
-
-console.log(display);
